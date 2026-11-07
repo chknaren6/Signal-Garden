@@ -2,84 +2,84 @@
 
 **Your saved internet had a plot.**
 
-Signal Garden turns fragments from a WhatsApp self chat, X bookmarks and voice notes into source-linked creative work. You choose what enters a Switch room. Three agents take distinct passes: Archivist traces evidence, Mycelium proposes a creative leap, and Editor challenges the draft. You decide what to keep and approve before opening X.
+Signal Garden is a private creative studio for the things you save and forget: a line in your WhatsApp self chat, an X bookmark, a voice note you meant to return to. It helps you find the idea connecting those fragments, turn it into a small project, and keep the evidence attached.
 
-## The two-minute demo
+It is built for people whose personal archive is full of sparks but short on follow-through. The goal is not another inbox or another AI summary. It is to turn a few chosen scraps into something you might actually make.
 
-### Before recording
+## The workflow
 
-1. Start Signal Garden locally with the command below.
-2. In Switch Console, start a local server, sign in to **Codex**, and use the local **Mattermost** bridge.
-3. Import **switch/garden-room.template.yaml** and create **garden-cross-pollination** with its three agents.
-4. Open the app and the real Mattermost room side by side. The first three sample fragments are already selected.
-5. Start recording before you send the prompt. Keep the actual Switch responses on screen. The dialogue shown inside the app is illustrative, not a live run.
+1. **Gather.** Import a WhatsApp text export or X bookmark JSON, or add a thought or voice-note transcript. Search, filter, and choose the fragments for this session.
+2. **Find the thread.** Signal Garden builds a brief with the selected words, dates, and stable source IDs. Your Switch room works through the brief in three passes: evidence, creative connection, editorial challenge.
+3. **Make it yours.** Bring the room’s idea or draft back to the dispatch desk. Edit it, check its source trail, and explicitly approve it before opening the X composer. Signal Garden never publishes for you.
 
-### Spoken script and screen direction
+The sample harvest, **The Unofficial City Index**, connects a self-chat thought about the city, a saved observation about who maintains it, and a voice-note transcript about unlabelled signs. The point is not that those fragments have one correct meaning. The point is that a surprising idea can be proposed with its roots still visible.
 
-| Time | Show | Say |
-| --- | --- | --- |
-| 0:00–0:12 | Signal Garden home screen | “My self chat, bookmarks and voice notes became a second brain with no memory. Signal Garden looks for the creative thread between them.” |
-| 0:12–0:28 | Point to the three selected fictional fragments and the map | “These three saves become The Unofficial City Index. Every idea keeps the source IDs that led to it.” |
-| 0:28–0:42 | Click **Ask your room to find a thread**, then **Copy room brief**. Paste it into Mattermost. | “I choose what leaves my browser. This brief gives the Switch room only those fragments and one question.” |
-| 0:42–1:22 | Show the live room as Archivist, Mycelium and Editor hand off work | “Archivist maps the evidence. Mycelium makes the connection. Editor challenges unsupported claims and keeps the draft tied to its sources.” |
-| 1:22–1:47 | Bring the Editor’s real draft into the dispatch desk, edit it, and mark it approved | “The post is a suggestion. I edit it and approve it before the X composer can open.” |
-| 1:47–2:00 | Click **Review in X** and show the prefilled composer without posting | “The agents helped me find the thread. I still decide what gets published.” |
+## Why Switch is part of the product
 
-Keep the real agent exchange in the video. Trim idle waiting if needed; don’t replace it with the illustrative sample dialogue. Nothing needs to be posted publicly during the recording.
+Signal Garden uses a shared Switch room as a small creative team, not as a single prompt with three character names. The room template in [`switch/garden-room.template.yaml`](switch/garden-room.template.yaml) defines three agents with distinct instructions and an ordered handoff:
 
-## Run locally
+- **Archivist** finds patterns in the words the person actually shared, quotes them, and attaches their source IDs.
+- **Mycelium** uses that evidence to connect fragments and propose one small creative project, while naming the leap it is making.
+- **Editor** challenges clichés, unsupported claims, and privacy leaks, then offers an optional short draft for the person to review.
 
-Requires Node.js 20 or newer. There are no dependencies or local build step.
+The person chooses the material, asks the question, and makes the final call. The app prepares the room brief for a deliberate copy/paste handoff to the connected Switch bridge. It does not silently sync a private archive to an agent. The in-app room conversation is clearly marked as **illustrative**; use the actual Switch room exchange when demonstrating the agents.
 
-~~~sh
+## Run it locally
+
+Requires Node.js 20 or newer. The app has no third-party runtime dependencies.
+
+```sh
 npm start
-~~~
+```
 
-Open http://localhost:4173.
+Open [http://localhost:4173](http://localhost:4173).
+
+The included library is fictional demo material. To use your own, choose **Bring in your saves** and select a WhatsApp `.txt` export or X archive/bookmark `.json`; or use **Capture a thought** for a note or transcript. Imports are parsed in the browser, capped at 250 fragments per file, and saved in that browser’s local storage. Export a library copy from the app if you want a portable backup.
 
 ## Set up the Switch room
 
-1. Follow the [Switch quickstart](https://docs.switchagents.ai/switch-rooms/getting-started) to install Switch Console, start a local server, and sign in to Codex.
-2. Connect the local Mattermost bridge. The template uses the first bridge configured on your server.
-3. Import **switch/garden-room.template.yaml**. It creates three agents in a shared **garden-cross-pollination** room:
-   - **garden-archivist** groups observations and quotes exact source IDs.
-   - **garden-mycelium** connects fragments from different moments and proposes a small creative project.
-   - **garden-editor** tests the idea for clichés and unsupported claims, then offers a post for human review.
-4. In Signal Garden, select the fragments you want, choose **Ask your room to find a thread**, and copy the generated prompt into the Mattermost room.
-5. Let the agents work in order in the shared room. Bring the post you want to keep back to the app, edit it, approve it, and choose whether to open X.
+1. Install and start [Switch](https://docs.switchagents.ai/switch-rooms/getting-started), sign in to the provider you want to use, and connect a messaging bridge supported by your Switch server.
+2. Import [`switch/garden-room.template.yaml`](switch/garden-room.template.yaml) in Switch Console. The template defaults to Codex and local agent workspaces; choose the provider, location, and bridge available in your setup.
+3. Create the `garden-cross-pollination` room with the three agents. The template uses the first configured bridge unless you select another during setup.
+4. In Signal Garden, select the fragments for the session and choose **Prepare a brief for this room**. Copy the brief into the room and let the agents complete their handoffs.
+5. Bring the draft you want to keep into the dispatch desk. Edit it, mark it approved, and choose **Review in X** only if you want to inspect the prefilled composer.
 
-The template follows Switch’s [room-template example](https://github.com/sandbox-quantum/switch/blob/main/examples/agent-templates/triage-pair.template.yaml). The same template can use another bridge supported by your Switch server; name the bridge actually shown in your demo.
+The person remains in control at each boundary: which fragments leave the browser, which idea survives the room, and whether an approved draft is taken to X.
 
-## Bring in your own fragments
+## Privacy and publishing
 
-- Export a WhatsApp self chat as a text file and choose **Bring in your saves**. Messages authored by “You” or “Me” are preferred when the export includes speaker names.
-- Import X bookmarks from a JSON archive.
-- Add voice notes as transcripts with **Capture a thought**.
+- There is no Signal Garden backend, account system, analytics, or external AI request in the app.
+- Imports and edits stay in browser storage. The static deployment serves the interface and fictional starter library; it does not receive your imported personal archive.
+- Copying a room brief places only the selected fragments on your clipboard. They reach Switch if you paste them into its connected bridge.
+- Opening X requires an explicit approval in the app and opens a prefilled composer. You review and publish there yourself; the app has no X credentials and cannot post on your behalf.
 
-Imports run in your browser and are capped at 250 fragments per file. The app has no backend, account login, analytics or external AI call. Content leaves the browser only when you copy selected fragments into a Switch room or open an approved draft in X.
+## Deploy on Vercel
 
-The included twelve-fragment library is fictional. It creates a coherent demo without using anyone’s private messages. The sample outcome and room dialogue in the app are labeled illustrative.
+This is a static site. [`vercel.json`](vercel.json) tells Vercel to run the dependency-free build and publish `dist/`, which contains the app, sample data, and blog. No server process or environment variables are needed.
 
-## GitHub Pages deployment
+1. Import `chknaren6/Signal-Garden` into Vercel and deploy from `main`.
+2. Keep the project root as the repository root. The included Vercel configuration sets the build command and output directory.
+3. After the first deployment is Ready, open the production URL and check the app, imports panel, and `/blog/` article. Future pushes to `main` trigger a new deployment.
 
-The workflow at **.github/workflows/pages.yml** assembles the app and article, then deploys them to GitHub Pages on pushes to **main**.
+For a local production-output check, run:
 
-Before the first deployment, open **Settings → Pages → Build and deployment** and set **Source** to **GitHub Actions**. Then open **Actions**, select **Deploy Signal Garden to GitHub Pages**, and rerun the failed run.
+```sh
+npm run build
+```
 
-If a run still fails, use the first red step to narrow it down:
+The Best Blog entry is included at [`/blog/`](blog/index.html): **“My saved internet had a plot.”**
 
-- **Configure GitHub Pages** or **Publish to GitHub Pages**: check that Pages is enabled and its source is GitHub Actions.
-- **Assemble the static site**: check that the repository contains **index.html**, **style.css**, **app.js**, **data/** and **blog/**.
-- **Resource not accessible by integration**: check the repository’s Actions workflow permissions.
-- **Artifact not found**: make sure the upload step completed before the publish step.
+## Repository map
 
-GitHub documents the required source setting and custom-workflow steps in [Using custom workflows with GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
+| Path | What it does |
+| --- | --- |
+| `index.html`, `style.css`, `app.js` | The local-first archive, source map, Switch handoff, and approval-gated dispatch desk |
+| `data/signals.json` | Fictional starter fragments for the sample harvest |
+| `switch/garden-room.template.yaml` | The three-agent Switch room and their evidence-first handoff |
+| `blog/` | The illustrated build story for the Best Blog side track |
+| `server.mjs` | Small dependency-free local web server |
+| `scripts/build.mjs`, `vercel.json` | Reproducible static output for Vercel |
 
-After deployment, the app is at https://chknaren6.github.io/Signal-Garden/ and the Best Blog article is at https://chknaren6.github.io/Signal-Garden/blog/.
+## What is working in this submission
 
-## Project files
-
-- **blog/index.html**, **blog/blog.css** and **blog/blog.js** — the illustrated build story.
-- **switch/garden-room.template.yaml** — the three-agent Switch room.
-- **index.html**, **style.css** and **app.js** — the personal source garden and dispatch desk.
-- **server.mjs** — a small static server for local use.
+The browser workflow, imports, source-linked room brief, fictional starter harvest, human approval gate, X composer handoff, blog, and Switch room template are in the repository. The agent exchange shown in the app is example copy, not a recording of a live agent run. A demo should show the three configured agents responding in the connected Switch room, then show the user reviewing the result in Signal Garden.
