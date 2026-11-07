@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f1e8">
+  <meta name="description" content="I stopped asking AI to summarize my saved posts. I asked what they were trying to grow. The story of Signal Garden, a personal creative workflow built with Switch.">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="My saved internet had a plot">
+  <meta property="og:description" content="A field note on turning WhatsApp thoughts, X bookmarks and voice notes into source-linked creative work with Switch.">
+  <title>My saved internet had a plot — Signal Garden</title>
+  <link rel="stylesheet" href="./blog.css">
+  <script src="./blog.js" defer></script>
+</head>
+<body>
+  <div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="wordmark" href="../" aria-label="Signal Garden app home">
+      <svg viewBox="0 0 34 34" fill="none" aria-hidden="true"><path d="M7 25C10.5 21.4 11.4 13.4 17 9.2C20.4 6.7 24.5 7.1 27 9.1M7 25C11.5 26.1 17 25.1 20 21.2C22.1 18.5 22.6 14.3 27 9.1M7 25C13.7 23.7 19.3 15.4 27 9.1" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="7" cy="25" r="2.3" fill="currentColor"/><circle cx="27" cy="9" r="2.3" fill="currentColor"/></svg>
+      <span>signal garden</span>
+    </a>
+    <nav class="header-nav" aria-label="Article navigation">
+      <a href="#the-room">The Switch room</a>
+      <a href="#build-notes">Build notes</a>
+      <a class="header-app-link" href="../">Open the garden <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="article-title">
+      <div class="hero-copy">
+        <div class="issue-line"><span class="issue-mark"></span><span>Field note 01</span><span class="issue-divider">/</span><span>Flip the Switch · Track 02</span></div>
+        <h1 id="article-title">My saved internet<br>had a <em>plot.</em></h1>
+        <p class="hero-deck">I stopped asking AI to summarize my saves. I asked what they were trying to grow.</p>
+        <div class="byline">
+          <span class="byline-seal">SG</span>
+          <span><strong>Building Signal Garden</strong><small>A personal creative workflow with Switch</small></span>
+        <span class="read-time">6 minute read</span>
+        </div>
+        <a class="hero-link" href="#opening">Read the field note <span aria-hidden="true">↓</span></a>
+      </div>
+
+      <figure class="thread-map" id="threadMap" aria-labelledby="mapCaption">
+        <div class="map-topline"><span>One harvest · three fragments</span><span class="map-coordinate">12°58′ N · 77°35′ E</span></div>
+        <div class="map-canvas">
+          <svg class="thread-lines" viewBox="0 0 660 440" preserveAspectRatio="none" aria-hidden="true">
+            <path class="topo" d="M-20 80C75 25 120 112 222 76s148-82 240-33 138 11 230-26"/>
+            <path class="topo" d="M-20 106C79 50 123 139 229 103s146-82 239-33 139 12 230-25"/>
+            <path class="topo" d="M-30 352c100-42 151 36 245-4s148-81 240-37 141 39 238-12"/>
+            <path class="topo" d="M-25 379c98-42 149 36 244-4s149-81 240-37 141 39 239-12"/>
+            <path class="route route-a" d="M94 110C160 151 192 222 320 247"/>
+            <path class="route route-b" d="M553 109C478 141 456 204 345 244"/>
+            <path class="route route-c" d="M120 335C203 312 235 277 326 251"/>
+            <circle class="route-dot dot-a" cx="94" cy="110" r="7"/>
+            <circle class="route-dot dot-b" cx="553" cy="109" r="7"/>
+            <circle class="route-dot dot-c" cx="120" cy="335" r="7"/>
+            <circle class="route-center" cx="338" cy="247" r="9"/>
+          </svg>
+          <div class="map-label map-label-a"><span>self chat · sg–01</span><strong>Before the day<br>begins</strong></div>
+          <div class="map-label map-label-b"><span>X bookmark · sg–02</span><strong>A city edited<br>by hand</strong></div>
+          <div class="map-label map-label-c"><span>voice note · sg–03</span><strong>26 signs without<br>names</strong></div>
+          <div class="idea-ticket">
+            <span class="ticket-serial">A PERSONAL ATLAS</span>
+            <span class="ticket-rule"></span>
+            <strong>The Unofficial<br>City Index</strong>
+            <span class="ticket-foot">small acts, kept in view</span>
+          </div>
+          <span class="map-north" aria-hidden="true">N</span>
+        </div>
+        <figcaption id="mapCaption"><span>Three unrelated saves</span><span class="caption-thread"></span><span>One idea with receipts</span></figcaption>
+        <button class="trace-button" id="traceButton" type="button" aria-pressed="false"><span class="trace-icon" aria-hidden="true">↗</span><span id="traceLabel">Trace the thread</span></button>
+      </figure>
+    </section>
+
+    <div class="article-ribbon" aria-label="Article themes">
+      <span>Personal internet archaeology</span><i></i><span>Switch agent rooms</span><i></i><span>Creative work with provenance</span>
+    </div>
+
+    <div class="article-layout" id="opening">
+      <article class="article">
+        <p class="drop-intro">My self chat is full of thoughts I meant to revisit. My X bookmarks are full of things I meant to read. My voice notes are full of tiny details I was afraid I would forget.</p>
+        <p>I kept calling that a second brain. It behaved more like an attic: packed with interesting things, no clear path through it, and a growing suspicion I was saving objects for a version of me who never arrived.</p>
+        <p>The problem was not that I needed a better filing system. I wanted to know <em>why these particular things had caught my attention</em> — and whether the thread between them could become something I might actually make.</p>
+
+        <blockquote class="pull-quote">
+          <span class="quote-mark">“</span>
+          <p>A bookmark is a tiny bet you make with your future self.</p>
+          <cite>What if the bet came with a clue?</cite>
+        </blockquote>
+
+        <section class="article-section" id="the-harvest">
+          <div class="section-marker"><span>01</span><span class="marker-line"></span><span>The harvest</span></div>
+          <h2>Three saves.<br><em>One subconscious brief.</em></h2>
+          <p>Signal Garden is a private creative practice for cross-pollinating saved fragments into a small project, an essay seed or a post I choose to publish. It starts with a question that feels different from “what did I save?”</p>
+          <p><strong>What am I paying attention to without noticing?</strong></p>
+          <p>The demo plants three fictional fragments: a note about seeing the city before it asks anything of you; a saved line about the people who fix, paint, plant and sell; and a voice note about twenty-six photos of hand-painted signs with no names.</p>
+          <div class="fragment-stack" aria-label="Three fictional example fragments">
+            <div class="fragment fragment-self"><span class="fragment-label"><span class="mini-mark">W</span> Self chat · SG-01</span><p>“I want to see the city before it begins demanding things from me.”</p></div>
+            <div class="fragment fragment-x"><span class="fragment-label"><span class="mini-mark">X</span> X bookmark · SG-02</span><p>“A city is edited every day by the people who fix, paint, plant and sell at its edges.”</p></div>
+            <div class="fragment fragment-voice"><span class="fragment-label"><span class="mini-mark">V</span> Voice note · SG-03</span><p>“I have twenty-six photos of hand-painted shop signs and none of them have names.”</p></div>
+          </div>
+          <p>Taken separately, these are a mood, an observation and a half-finished collection. Connected, they suggest <strong>The Unofficial City Index</strong>: a field guide to the quiet hands that make a neighbourhood feel alive.</p>
+          <p>The project idea is a leap. The fragments are evidence. Signal Garden keeps the two visibly separate.</p>
+        </section>
+
+        <aside class="margin-note">
+          <span class="note-number">A rule for the room</span>
+          <p>Every creative leap carries the source IDs that sparked it. No free-floating “insight.”</p>
+          <span class="note-thread" aria-hidden="true"></span>
+        </aside>
+
+        <section class="article-section" id="the-room">
+          <div class="section-marker"><span>02</span><span class="marker-line"></span><span>The Switch room</span></div>
+          <h2>Not one oracle.<br><em>A room with different jobs.</em></h2>
+          <p>I wanted the agents to disagree productively and leave their working visible. So Signal Garden gives them separate jobs in one Switch room: evidence first, creative leap second, editorial pressure test last.</p>
+          <div class="room-flow" aria-label="Three agents hand off work in order">
+            <div class="flow-agent">
+              <span class="flow-number">01</span><span class="flow-avatar archivist-avatar">A</span>
+              <div><h3>Archivist</h3><p>Finds motifs in the selected fragments. Quotes exact phrases, attaches source IDs, and labels interpretation as interpretation.</p></div>
+              <span class="flow-output">Evidence map</span>
+            </div>
+            <div class="flow-connector"><span></span></div>
+            <div class="flow-agent">
+              <span class="flow-number">02</span><span class="flow-avatar mycelium-avatar">M</span>
+              <div><h3>Mycelium</h3><p>Makes one surprising connection across moments. Proposes a vivid project someone can begin in under an hour.</p></div>
+              <span class="flow-output">A first move</span>
+            </div>
+            <div class="flow-connector"><span></span></div>
+            <div class="flow-agent">
+              <span class="flow-number">03</span><span class="flow-avatar editor-avatar">E</span>
+              <div><h3>Editor</h3><p>Challenges cliché, invented context and unsupported claims. Returns an optional post with the sources behind it.</p></div>
+              <span class="flow-output">A human choice</span>
+            </div>
+          </div>
+          <p>Switch is the workbench here. The person and each agent share a room, instructions and handoffs; the creative process stays inspectable instead of collapsing into a single answer. The included template creates the three agents and the <strong>garden-cross-pollination</strong> room.</p>
+          <p>In this first cut, I deliberately pass a selected source bundle into the room instead of asking agents to log into my personal accounts. The extra copy-and-paste is visible friction. The tradeoff is that no agent gets a back door into my messages or bookmarks.</p>
+          <div class="honesty-note"><span class="honesty-rule"></span><p>The example outcome in the app uses fictional signals. The included sample room dialogue is labeled illustrative; a real demo recording should show the agents running in Switch.</p></div>
+        </section>
+
+        <section class="article-section" id="the-gate">
+          <div class="section-marker"><span>03</span><span class="marker-line"></span><span>The publishing gate</span></div>
+          <h2>A draft is a suggestion.<br><em>My name is still on it.</em></h2>
+          <p>An agent can offer a sentence. It cannot decide that the sentence sounds like me, that the idea is ready, or that I want to post today.</p>
+          <p>The dispatch desk keeps the candidate editable and counts its characters. I have to mark it approved before the prefilled X composer opens. The final “post” action still happens in X, with me looking at the copy.</p>
+          <div class="gate-card">
+            <div class="gate-status"><span class="gate-checkbox"><span></span></span><span>Reviewed by the person who owns it</span><span class="gate-lock">Human gate</span></div>
+            <p>“Maybe a city’s real map is its quiet keepers. I’m starting an Unofficial City Index. What belongs in yours?”</p>
+            <div class="gate-foot"><span>≤ 280 characters</span><span>3 source fragments attached</span><span>Not posted</span></div>
+          </div>
+          <p>Nothing in the prototype signs into X, schedules a post or publishes in the background. Good personal agents should give me more agency over my attention, not quietly take over my voice.</p>
+        </section>
+
+        <section class="article-section build-section" id="build-notes">
+          <div class="section-marker"><span>04</span><span class="marker-line"></span><span>Build notes</span></div>
+          <h2>A small tool.<br><em>A real Switch workflow.</em></h2>
+          <p>The app is plain HTML, CSS and browser JavaScript. A tiny Node server serves it locally; there is no package install or build step. Captures and imports stay in browser storage. Each import is capped at 250 fragments to fit typical browser storage.</p>
+          <p>WhatsApp self-chat exports come in as text. X bookmark archives come in as JSON. Voice notes can be added as a transcript and a little context. There is no account login, analytics, backend or external AI call inside the app.</p>
+          <div class="setup-card">
+            <div class="setup-heading"><span class="setup-index">Try the project</span><span>Local setup</span></div>
+            <ol>
+              <li>Start Switch Console, connect a chat bridge and sign in to a supported agent provider.</li>
+              <li>Import the included <code>switch/garden-room.template.yaml</code> and create its room and agents.</li>
+              <li>Run the app with <code>npm start</code> and open <code>http://localhost:4173</code>.</li>
+              <li>Choose a few fragments, prepare the brief, and paste it into <code>garden-cross-pollination</code>.</li>
+              <li>Follow the evidence → idea → edit handoffs. Bring the post back, approve it, and choose whether to publish.</li>
+            </ol>
+            <a href="https://docs.switchagents.ai/switch-rooms/getting-started" target="_blank" rel="noopener noreferrer">Switch quickstart <span aria-hidden="true">↗</span></a>
+            <a class="template-link" href="https://github.com/chknaren6/Signal-Garden/blob/main/switch/garden-room.template.yaml" target="_blank" rel="noopener noreferrer">Open the room template <span aria-hidden="true">↗</span></a>
+          </div>
+          <p>The first version is intentionally modest about automation. Switch does the collaborative thinking in its room; Signal Garden holds the source fragments and the publishing decision. That seam is visible, so the owner can decide exactly what crosses it.</p>
+        </section>
+
+        <section class="last-word">
+          <span class="last-word-index">Field note ends here</span>
+          <p>I did not need the agents to remember everything for me. I needed them to find a thread I might want to follow — and show me where it began.</p>
+          <a href="../">Open Signal Garden <span aria-hidden="true">↗</span></a>
+        </section>
+      </article>
+
+      <aside class="article-aside" aria-label="Article notes">
+        <div class="aside-sticky">
+          <div class="aside-index"><span>IN THIS NOTE</span><span>04 parts</span></div>
+          <a href="#the-harvest"><span>01</span> The harvest</a>
+          <a href="#the-room"><span>02</span> The Switch room</a>
+          <a href="#the-gate"><span>03</span> The publishing gate</a>
+          <a href="#build-notes"><span>04</span> Build notes</a>
+          <div class="aside-rule"></div>
+          <p class="aside-quote">The internet is a compost heap for ideas you haven't had yet.</p>
+          <span class="aside-attribution">Signal Garden · field note 01</span>
+          <div class="aside-seeds" aria-hidden="true"><span></span><span></span><span></span></div>
+          <a class="aside-repo" href="https://github.com/chknaren6/Signal-Garden">View the public project <span aria-hidden="true">↗</span></a>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <a class="wordmark" href="../"><svg viewBox="0 0 34 34" fill="none" aria-hidden="true"><path d="M7 25C10.5 21.4 11.4 13.4 17 9.2C20.4 6.7 24.5 7.1 27 9.1M7 25C11.5 26.1 17 25.1 20 21.2C22.1 18.5 22.6 14.3 27 9.1M7 25C13.7 23.7 19.3 15.4 27 9.1" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="7" cy="25" r="2.3" fill="currentColor"/><circle cx="27" cy="9" r="2.3" fill="currentColor"/></svg><span>signal garden</span></a>
+    <p>Made for the things you save and the things you might make.</p>
+    <a href="https://github.com/chknaren6/Signal-Garden">Source on GitHub <span aria-hidden="true">↗</span></a>
+  </footer>
+</body>
+</html>

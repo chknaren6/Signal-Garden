@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f4ef">
+  <meta name="description" content="A private garden for the things you meant to come back to, and the ideas hiding between them.">
+  <title>Signal Garden — your saves have a plot</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="rail" aria-label="Main navigation">
+      <a class="brand" href="#overview" aria-label="Signal Garden home">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 34 34" fill="none"><path d="M7 25C10.5 21.4 11.4 13.4 17 9.2C20.4 6.7 24.5 7.1 27 9.1M7 25C11.5 26.1 17 25.1 20 21.2C22.1 18.5 22.6 14.3 27 9.1M7 25C13.7 23.7 19.3 15.4 27 9.1" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="7" cy="25" r="2.3" fill="currentColor"/><circle cx="27" cy="9" r="2.3" fill="currentColor"/></svg></span>
+        <span class="brand-name">signal garden</span>
+      </a>
+      <div class="profile-switch"><span class="profile-avatar">S</span><span><strong>Your private garden</strong><small>Personal workspace</small></span><svg class="chevron" viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></div>
+      <nav class="nav-list">
+        <p class="rail-label">Your workspace</p>
+          <a class="nav-item active" href="#overview" data-route="overview"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10.1 10 4l7 6.1V17H3v-6.9Z"/><path d="M8 17v-5h4v5"/></svg><span>Overview</span></a>
+        <a class="nav-item" href="#library" data-route="library"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 3.5h12v13H4z"/><path d="M7 7h6M7 10h6M7 13h3"/></svg><span>Seed library</span><span class="nav-count" id="navSeedCount">12</span></a>
+        <a class="nav-item" href="#room" data-route="room"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 4.5h14v9H9l-4 3v-3H3z"/><path d="M7 8h6M7 10.5h4"/></svg><span>Switch room</span><span class="room-indicator"></span></a>
+        <a class="nav-item" href="#dispatch" data-route="dispatch"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 3.5h12v13H4z"/><path d="m7 12 2 2 4-5M7 7h6"/></svg><span>Dispatch desk</span></a>
+      </nav>
+      <div class="rail-spacer"></div>
+      <div class="rail-season"><div class="season-head"><span class="season-stamp">03</span><span>Current season</span></div><p>Small acts<br>of noticing</p><div class="season-progress"><span></span></div><div class="season-foot"><span>12 fragments</span><span>3 weeks</span></div></div>
+      <div class="rail-bottom">
+        <div class="privacy-seal"><span class="seal-dot"></span><span>Stays on this device</span></div>
+        <button class="rail-action" id="importButton" type="button"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 13V3m0 0L6.5 6.5M10 3l3.5 3.5M4 12.5v3h12v-3"/></svg><span>Bring in your saves</span></button>
+        <input id="importFile" type="file" accept=".txt,.json,.js,application/json,text/plain" hidden>
+      </div>
+    </aside>
+
+    <main class="main-content" id="overview">
+      <header class="topbar">
+        <div class="breadcrumbs"><span>Personal workspace</span><span class="crumb-slash">/</span><strong>Garden 03</strong></div>
+        <div class="topbar-actions">
+          <button class="quiet-button" id="searchFocus" type="button" aria-label="Focus search"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.7" cy="8.7" r="5.6"/><path d="m13 13 4 4"/></svg><span>Find a fragment</span><kbd>/</kbd></button>
+          <button class="icon-button" id="exportButton" type="button" aria-label="Export library" title="Export a copy of your library"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v10m0 0 3.5-3.5M10 13 6.5 9.5M4 14v3h12v-3"/></svg></button>
+          <button class="capture-button" id="captureOpen" type="button"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 4v12M4 10h12"/></svg><span>Capture a thought</span></button>
+        </div>
+      </header>
+      <div class="page-wrap">
+        <section class="page-intro">
+          <div><p class="eyebrow"><span class="eyebrow-rule"></span> A private creative practice <span class="eyebrow-date">· Nov 07, 2026</span></p><h1>Your saved internet<br>has a <em>plot.</em></h1><p class="intro-copy">The things you almost forgot are still trying to tell you something.</p></div>
+          <button class="outline-button" id="harvestButton" type="button"><span>Ask your room to find a thread</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3.5 10h12m-5-5 5 5-5 5"/></svg></button>
+        </section>
+
+        <section class="feature-section" aria-labelledby="feature-title">
+          <div class="feature-heading"><div><span class="section-kicker">A quiet cross-pollination</span><span class="sample-label">Sample harvest · fictional signals</span></div><button class="text-button" id="newPatternButton" type="button">Choose another thread <span aria-hidden="true">↗</span></button></div>
+          <div class="feature-grid">
+            <article class="pattern-card">
+              <div class="pattern-copy">
+                <div class="pattern-meta"><span class="pattern-index">01</span><span class="meta-rule"></span><span>3 fragments · 3 capture streams</span></div>
+                <h2 id="feature-title">The Unofficial<br>City Index</h2>
+                <p class="pattern-description">A field guide to the quiet hands that keep a neighbourhood alive: the sign painter, the planter-waterer, the person who fixes what everyone else walks past.</p>
+                <div class="pattern-tags"><span>Personal project</span><span>Field notes</span></div>
+                <div class="source-list" aria-label="Sources behind this idea">
+                  <span class="source-line"><span class="source-glyph glyph-wa">W</span><span>“before the city asks things of me”</span><span class="source-id">SG-01</span></span>
+                  <span class="source-line"><span class="source-glyph glyph-x">X</span><span>“who fixes, paints, plants and sells”</span><span class="source-id">SG-02</span></span>
+                  <span class="source-line"><span class="source-glyph glyph-voice">V</span><span>“26 photos of signs with no names”</span><span class="source-id">SG-03</span></span>
+                </div>
+              </div>
+              <div class="map-art" role="img" aria-label="A field-note map connecting three saved fragments to the Unofficial City Index idea">
+                <svg class="map-lines" viewBox="0 0 680 420" preserveAspectRatio="none" aria-hidden="true">
+                  <path class="contour" d="M-30 81C75 23 120 122 229 81s140-86 238-31 140 15 243-28"/><path class="contour" d="M-23 108C82 50 128 149 238 108s143-85 242-31 142 17 244-26"/>
+                  <path class="contour" d="M-25 336c102-49 153 37 249-7s145-86 242-40 133 44 238-8"/><path class="contour" d="M-17 364c102-49 153 37 249-7s145-86 242-40 133 44 238-8"/>
+                  <path class="route route-one" d="M94 111C153 153 179 239 319 245"/><path class="route route-two" d="M552 103C480 125 462 207 365 240"/><path class="route route-three" d="M119 332C194 307 225 278 324 253"/>
+                  <circle class="map-point point-one" cx="94" cy="111" r="6"/><circle class="map-point point-two" cx="552" cy="103" r="6"/><circle class="map-point point-three" cx="119" cy="332" r="6"/><circle class="map-hub" cx="341" cy="247" r="8"/>
+                </svg>
+                <div class="map-caption map-caption-top"><span class="map-pin"></span> a personal atlas, still in pencil</div>
+                <div class="map-note note-one"><span class="map-note-kind">Voice note · 18 sec</span><strong>Signs with no names</strong><small>SG-03 · Nov 02</small></div>
+                <div class="map-note note-two"><span class="map-note-kind">X bookmark</span><strong>The city is edited by hand</strong><small>SG-02 · Nov 03</small></div>
+                <div class="map-note note-three"><span class="map-note-kind">Self chat</span><strong>Before the day begins</strong><small>SG-01 · Nov 04</small></div>
+                <div class="map-idea"><span class="idea-sprout" aria-hidden="true"><span></span><i></i></span><span class="map-idea-copy"><small>The idea taking root</small><strong>Unofficial<br>City Index</strong><span>keep the source attached ↗</span></span></div>
+                <span class="map-scale">Bengaluru · not to scale</span>
+              </div>
+            </article>
+            <aside class="dispatch-card" id="dispatch">
+              <div class="dispatch-head"><span class="dispatch-mark">01</span><span>From idea to post</span><span class="draft-state" id="draftState">Unsent</span></div>
+              <p class="dispatch-label">A first dispatch</p>
+              <textarea id="draftText" class="draft-text" maxlength="280" aria-label="Draft X post">I keep saving small acts of repair: the basil growing by a bus stop, the hand-painted shop sign, the person who waters planters outside a closed cinema.
+
+Maybe a city’s real map isn’t its landmarks. Maybe it’s the people quietly keeping it alive.
+
+I’m starting an Unofficial City Index. What deserves an entry in yours?</textarea>
+              <div class="draft-sources"><span class="citation-dot"></span><span>Grounded in 3 saved fragments</span></div>
+              <div class="dispatch-foot"><span id="charCount">0 / 280</span><span class="post-destination"><span class="x-glyph">X</span> Your voice, your call</span></div>
+              <div class="dispatch-actions"><button class="primary-button" id="copyPost" type="button">Copy draft <svg viewBox="0 0 20 20" aria-hidden="true"><rect x="7" y="7" width="9" height="10" rx="1"/><path d="M13 7V4H4v9h3"/></svg></button><button class="secondary-button" id="openX" type="button">Review in X</button></div>
+              <button class="approve-link" id="approvePost" type="button"><span class="approval-box" id="approvalBox"></span><span id="approveLabel">Mark this draft as approved</span></button>
+              <p class="dispatch-note">Nothing publishes until you choose to send it.</p>
+            </aside>
+          </div>
+        </section>
+
+        <div class="lower-grid">
+          <section class="library-panel" id="library" aria-labelledby="library-title">
+            <div class="panel-heading"><div><p class="section-kicker">Your raw material</p><h2 id="library-title">The seed library <span class="title-count" id="libraryCount">12</span></h2></div><button class="icon-button small" id="librarySearchButton" type="button" aria-label="Search your seed library"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.7" cy="8.7" r="5.6"/><path d="m13 13 4 4"/></svg></button></div>
+            <div class="library-tools">
+              <div class="filter-tabs" id="filterTabs" role="group" aria-label="Filter by source">
+                <button class="filter-tab active" data-filter="All" type="button">All <span id="allCount">12</span></button><button class="filter-tab" data-filter="WhatsApp" type="button"><span class="tab-glyph wa-dot">W</span>Self chat</button>
+                <button class="filter-tab" data-filter="X" type="button"><span class="tab-glyph x-dot">X</span>Bookmarks</button><button class="filter-tab" data-filter="Voice note" type="button"><span class="tab-glyph voice-dot">V</span>Voice notes</button>
+              </div>
+              <label class="search-field" id="searchField" hidden><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.7" cy="8.7" r="5.6"/><path d="m13 13 4 4"/></svg><input id="searchInput" type="search" placeholder="Search fragments" aria-label="Search fragments"><button id="closeSearch" type="button" aria-label="Close search">×</button></label>
+            </div>
+            <div class="selection-bar" id="selectionBar"><span><strong id="selectedCount">3</strong> fragments selected</span><button id="useSelection" type="button">Send to Switch room <span aria-hidden="true">↗</span></button></div>
+            <div class="signal-grid" id="signalGrid" aria-live="polite"></div>
+            <div class="library-footer"><span id="showingCount">Showing 6 of 12</span><button class="text-button" id="showAllButton" type="button">Show all fragments <span aria-hidden="true">↓</span></button></div>
+          </section>
+
+          <section class="room-panel" id="room" aria-labelledby="room-title">
+            <div class="room-topline"><div><p class="section-kicker">The creative room</p><h2 id="room-title">Where the thread gets tested</h2></div><span class="room-live"><span></span> Template ready</span></div>
+            <div class="room-intro"><div class="room-avatar-stack" aria-label="Three Switch agents"><span class="avatar archivist">A</span><span class="avatar mycelium">M</span><span class="avatar editor">E</span></div><div><strong>garden / cross-pollination</strong><small>you + three specialist agents in Switch</small></div><button class="icon-button small room-more" id="roomSetup" type="button" aria-label="Show Switch room setup" title="Show room setup"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="4" cy="10" r="1"/><circle cx="10" cy="10" r="1"/><circle cx="16" cy="10" r="1"/></svg></button></div>
+            <div class="room-brief"><span class="brief-label">Sample room notes · illustrative</span><p>Three saves from three places. One question: <em>what are you paying attention to without realising?</em></p></div>
+            <div class="agent-notes">
+              <article class="agent-note"><span class="agent-avatar archivist">A</span><div><div class="agent-byline"><strong>Archivist</strong><span>Found the motif</span></div><p>“Before the city asks things of me” and “signs with no names” both turn looking into a way of keeping a record.</p><div class="note-citations"><span>SG-01</span><span>SG-03</span></div></div></article>
+              <article class="agent-note"><span class="agent-avatar mycelium">M</span><div><div class="agent-byline"><strong>Mycelium</strong><span>Made the leap</span></div><p>The common thread is invisible authorship. Try an index of the people and small repairs that make a place feel cared for.</p><div class="note-citations"><span>SG-02</span><span>SG-09</span></div></div></article>
+              <article class="agent-note"><span class="agent-avatar editor">E</span><div><div class="agent-byline"><strong>Editor</strong><span>Kept it honest</span></div><p>“The Unofficial City Index” is an open question, not a claim. The draft cites your fragments and leaves the conclusion yours.</p><div class="note-citations"><span>3 sources checked</span></div></div></article>
+            </div>
+            <div class="room-footer"><button class="room-ask-button" id="roomAsk" type="button"><span>Prepare a brief for this room</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3.5 10h12m-5-5 5 5-5 5"/></svg></button><p>Sample dialogue is illustrative. Your agents run in Switch.</p></div>
+          </section>
+        </div>
+        <footer class="page-footer"><span>Signal Garden <span class="footer-separator">·</span> a personal creative practice</span><span>Fictional demo data <span class="footer-separator">·</span> saved on this device</span><a href="./blog/">Read the build story <span aria-hidden="true">↗</span></a></footer>
+      </div>
+    </main>
+  </div>
+  <dialog class="modal" id="captureModal" aria-labelledby="captureTitle">
+    <form method="dialog" class="modal-close-form"><button class="modal-close" aria-label="Close capture form">×</button></form>
+    <p class="section-kicker">Add to the garden</p><h2 id="captureTitle">Catch the thought</h2><p class="modal-subtitle">A line, a link, a detail you don't want to lose.</p>
+    <form id="captureForm">
+      <label class="form-label">Where did it come from?<select id="captureSource"><option>WhatsApp</option><option>X</option><option>Voice note</option><option>Other</option></select></label>
+      <label class="form-label">The fragment<textarea id="captureText" rows="4" maxlength="600" placeholder="What did you save or tell yourself?" required></textarea></label>
+      <label class="form-label">A little context <span class="optional-label">Optional</span><input id="captureContext" type="text" maxlength="120" placeholder="Where you were, why it caught your eye"></label>
+      <div class="modal-actions"><button type="button" class="secondary-button" id="cancelCapture">Keep walking</button><button class="primary-button" type="submit">Plant this fragment</button></div>
+    </form>
+  </dialog>
+  <dialog class="modal brief-modal" id="briefModal" aria-labelledby="briefTitle">
+    <form method="dialog" class="modal-close-form"><button class="modal-close" aria-label="Close room brief">×</button></form>
+    <p class="section-kicker">Your next Switch session</p><h2 id="briefTitle">A brief with its roots attached</h2><p class="modal-subtitle">Copy the selected fragments into your Switch room. The agents will take separate passes, cite their sources, then return a draft for your review.</p>
+    <div class="brief-route"><span class="route-step">You choose</span><span class="route-arrow">→</span><span class="route-step">Switch agents investigate</span><span class="route-arrow">→</span><span class="route-step">You approve</span></div>
+    <label class="form-label brief-label-field">Room prompt<textarea id="roomPrompt" rows="13" readonly aria-label="Prompt to paste into your Switch room"></textarea></label>
+    <p class="privacy-note"><span class="privacy-mini"></span>Only paste material you want to share with the agents in that room.</p>
+    <div class="modal-actions"><button type="button" class="secondary-button" id="closeBrief">Close</button><button type="button" class="primary-button" id="copyBrief">Copy room brief</button></div>
+  </dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

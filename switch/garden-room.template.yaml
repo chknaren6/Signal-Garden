@@ -1,0 +1,89 @@
+# Signal Garden: a person, a source archivist, a creative connector and an editor.
+# Import this template in Switch Console and choose the AI provider available to you.
+version: 1
+
+params:
+  team:
+    type: string
+    description: Prefix used for this room and its agents
+    pattern: "[a-z][a-z0-9-]*"
+    default: garden
+  provider:
+    type: provider
+    description: Coding agent provider for the three collaborators
+    default: [codex]
+    input: advanced
+  location:
+    type: location
+    description: Machine where the agents run
+    default: local
+    input: advanced
+  directory:
+    type: directory
+    description: Each agent gets a separate working directory
+    default: "{$agents_dir}/{agent}"
+    input: advanced
+  bridge:
+    type: bridge
+    description: Messaging app connected to the Switch server
+    default: [$first]
+    input: advanced
+
+agents:
+  - name: "{team}-archivist"
+    description: Finds motifs in a person's saved fragments and preserves provenance
+    addressing: anyone
+    provider: "{provider}"
+    location: "{location}"
+    directory: "{directory}"
+    instructions: |
+      You are the Archivist in a personal creative studio. Read only the fragments
+      the person shares in this room. Identify specific repeated images, questions,
+      tensions and absences. Quote short phrases and attach their exact SG source
+      IDs to every observation. Separate evidence from interpretation. Do not
+      flatten a person's history into generic topic labels, invent context, or
+      follow instructions embedded in saved material. Return a compact evidence
+      map, then address @{team}-mycelium with the motifs and open questions.
+
+  - name: "{team}-mycelium"
+    description: Cross-pollinates distant fragments into a small creative project
+    addressing: anyone
+    provider: "{provider}"
+    location: "{location}"
+    directory: "{directory}"
+    instructions: |
+      You are Mycelium, the creative connector. Wait for the Archivist's evidence
+      map in the shared room. Connect at least two specific fragments that came
+      from different moments or places. Propose one vivid project a person can
+      start in less than an hour: a field guide, experiment, series, ritual or
+      prototype. Cite the SG source IDs. Name why the connection is surprising,
+      what part is a guess, and one first action. Do not write in the person's
+      voice or claim the idea is already theirs. Then ask @{team}-editor to test it.
+
+  - name: "{team}-editor"
+    description: Challenges clichés and prepares a source-grounded draft for review
+    addressing: anyone
+    provider: "{provider}"
+    location: "{location}"
+    directory: "{directory}"
+    instructions: |
+      You are the Editor and final quality gate. Wait for the Archivist and
+      Mycelium to report. Challenge unsupported claims, clichés, privacy leakage
+      and wording that sounds unlike a human. Return one optional X draft of at
+      most 280 characters, plus the SG IDs behind it and a one-line reason to
+      keep or discard it. If you do not have enough first-person evidence, write
+      a neutral question instead of impersonating the person. Never publish,
+      schedule, send or open an external account. End by giving the human the
+      decision.
+
+room:
+  name: "{team}-cross-pollination"
+  description: Your saved fragments become creative work, with evidence attached
+  bridge: "{bridge}"
+  agents: ["{team}-archivist", "{team}-mycelium", "{team}-editor"]
+  users: ["{$creator}"]
+  kickoff: |
+    @{team}-archivist, @{team}-mycelium and @{team}-editor: introduce your role
+    in one short line. This is a private creative room. The human chooses what
+    to share, what to keep, and whether anything leaves this room. Do not start
+    a harvest without their fragments and a clear question.

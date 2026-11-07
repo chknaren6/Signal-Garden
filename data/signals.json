@@ -1,0 +1,14 @@
+[
+  {"id":"sg-01","source":"WhatsApp","kind":"thought","date":"2026-11-04","text":"I want to see the city before it begins demanding things from me.","context":"A note to myself after an early walk.","tags":["city","attention"]},
+  {"id":"sg-02","source":"X","kind":"bookmark","date":"2026-11-03","text":"A city is edited every day by the people who fix, paint, plant and sell at its edges.","context":"Saved for the idea, not the author.","tags":["city","care"]},
+  {"id":"sg-03","source":"Voice note","kind":"voice note","date":"2026-11-02","text":"I have twenty-six photos of hand-painted shop signs and none of them have names.","context":"Transcribed from a voice note, 00:18.","tags":["photos","signs"]},
+  {"id":"sg-04","source":"WhatsApp","kind":"thought","date":"2026-11-01","text":"A good desk makes it easier to begin, not harder to leave.","context":"A line from a Sunday reset.","tags":["work","ritual"]},
+  {"id":"sg-05","source":"X","kind":"bookmark","date":"2026-10-30","text":"The best field guide tells you what to notice, not what to think.","context":"A bookmark about naturalist notebooks.","tags":["writing","attention"]},
+  {"id":"sg-06","source":"Voice note","kind":"voice note","date":"2026-10-28","text":"There is a tiny patch of basil growing in a crack beside the bus stop.","context":"Captured on the way home.","tags":["city","plants"]},
+  {"id":"sg-07","source":"WhatsApp","kind":"thought","date":"2026-10-26","text":"Could I make a guide to the places that make a neighbourhood feel looked after?","context":"Unfinished project idea.","tags":["city","project"]},
+  {"id":"sg-08","source":"X","kind":"bookmark","date":"2026-10-24","text":"A handwritten price board is a small public promise.","context":"A saved line about ordinary design.","tags":["signs","design"]},
+  {"id":"sg-09","source":"Voice note","kind":"voice note","date":"2026-10-21","text":"Remember the woman who waters the planters outside the closed cinema.","context":"A detail worth returning to.","tags":["city","people"]},
+  {"id":"sg-10","source":"WhatsApp","kind":"thought","date":"2026-10-19","text":"Maybe my camera roll is a map of the things I do not want the city to lose.","context":"A note after sorting photos.","tags":["photos","memory"]},
+  {"id":"sg-11","source":"X","kind":"bookmark","date":"2026-10-17","text":"Small acts of maintenance are a kind of local authorship.","context":"Saved for a future essay.","tags":["care","writing"]},
+  {"id":"sg-12","source":"Voice note","kind":"voice note","date":"2026-10-14","text":"What if a map could show who keeps a place alive instead of only where it is?","context":"A question recorded on a walk.","tags":["city","project"]}
+]
